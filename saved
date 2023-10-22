@@ -1,0 +1,34 @@
+    public static ArrayList<FoodEntry> canEat(Menu object, ArrayList<String> allergies)
+    {
+      boolean ifContainsAllergen = false;
+      ArrayList<FoodEntry> canEatOnMenu = new ArrayList<FoodEntry>();
+      for(int i = 0; i < object.getMenu().size(); i++)
+      { //items on menu
+      System.out.println(object.getMenu().get(i).getName());
+      System.out.println("------------");
+        for(int j = 0; j < object.getMenu().get(i).getAllergens().size(); j++)
+        { //ingredients on each item
+        System.out.println("------------");
+        int word = object.getMenu().get(i).getAllergens().size();
+          System.out.println(word);
+          System.out.println("------------");
+
+          for(int k = 0; k < allergies.size(); k++)
+          {
+            if(object.getMenu().get(i).getAllergens().get(j).equals(allergies.get(k)))
+            {
+             System.out.println(object.getMenu().get(i).getName());
+              ifContainsAllergen = true;
+            }
+          }
+        }
+        if(!ifContainsAllergen){
+        canEatOnMenu.add(object.getMenu().get(i));
+        }
+      }
+      for(int i = 0; i < canEatOnMenu.size(); i++){
+        System.out.println(canEatOnMenu.get(i).getName());
+      }
+      return canEatOnMenu;
+    }
+  }
