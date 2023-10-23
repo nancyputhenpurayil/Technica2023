@@ -105,7 +105,7 @@ JFrame f = new JFrame("AllerGys");
     
     
     JLabel outputs = new JLabel("You can eat...");
-    outputs.setBounds(300,75,200,25);
+    outputs.setBounds(300,75,200,1);
     outputs.setBackground(Color.blue);
     f.add(outputs);
 
